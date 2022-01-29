@@ -9,8 +9,26 @@
     
     <title>Razer Mice Reference </title>
     <style>
-      .f1{
-        background-color:black;
+      .info{
+  position: relative;
+}
+      .info .infotext {
+        visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: -100%; 
+      }
+
+  /* Position the tooltip */
+      .info:hover .infotext{
+        visibility: visible;
       }
       ul {
         list-style-type: none;
@@ -72,7 +90,11 @@
      <input type="checkbox"> <br>
       </td>
     <th> <input type="number" min="1" max="10"></th>
-    <td> Razer Pro Click Mini
+    <td class="info"> Razer Pro Click Mini
+      <span class ="infotext">    
+    Silent, tactile mouse clicks
+    Sleek and compact design
+    Razer™ HyperScroll technology</span>
      </td>
      <td>
         <a href="https://www.razer.com/gaming-mice/Razer-Pro-Click-Mini/RZ01-03990100-R3U1">Specs</a> 
@@ -83,7 +105,13 @@
      <input type="checkbox"> <br>
       </td>
     <td> <input type="number" min="1" max="10"></td>
-    <td>Razer DeathAdder V2</td>
+    <td class="info">Razer DeathAdder V2
+      <span class="infotext">
+    Award-winning Ergonomic Design
+    Ultra-fast Razer™ HyperSpeed Wireless
+    235 Hours of Battery Life (2.4GHz)
+      </span>
+    </td>
     <td>
       <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-V2-X-HyperSpeed/RZ01-04130100-R3U1">Specs</a>
     </td>
@@ -93,7 +121,12 @@
      <input type="checkbox"> <br>
       </td>
     <th> <input type="number" min="1" max="10"></th>
-    <td>Razer Basilisk V3</td>
+    <td class="info">Razer Basilisk V3
+    <span class="infotext">
+    10+1 Programmable Buttons
+    Razer™ HyperScroll Tilt Wheel
+    11 Razer Chroma™ RGB Lighting Zones</span>
+    </td>
     <td>
     <a href = "https://www.razer.com/gaming-mice/Razer-Basilisk-V3/RZ01-04000100-R3M1">Specs</a>
     </td>
@@ -103,7 +136,12 @@
      <input type="checkbox"> <br>
       </td>
     <th> <input type="number" min="1" max="10"></th>
-    <td>Razer DeathAdder</td>
+    <td class="info">Razer DeathAdder
+    <span class="infotext">
+    Proven History of Performance
+    Ergonomic Form
+    Multi-Award Winning Tech</span>
+    </td>
     <td>
     <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-Essential/RZ01-03850100-R3M1">Specs</a>
     </td>
