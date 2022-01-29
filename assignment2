@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+        <a id="top"></a>
     <ul>
-      
-      <li><a class="active" href="#Home">Home</a></li>
+      <li><a class="active" href="#top">Home</a></li>
       <li><a href="#testing">About</a></li>
       <!--This is where we set the Navigation Bar items-->
     </ul>
     
     <title>Razer Mice Reference </title>
+    <!--Title of webpage set-->
     <style>
       .info{
         position: relative;
@@ -82,7 +83,7 @@
     </style>
   </head>
   <body>
-    <h1>Razer Mice</h1>
+    <h1 id ="home">Razer Mice</h1>
 <p>This table contains razer mice that come highly recommended.</p>
 <!--This form will create the form that contains the table -->   
 <form id="f1">
@@ -168,5 +169,24 @@
     <h2>
     James Conlin
     </h2>
+    <p>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+      This is test text<br>
+
+      
+    </p>
   </body>
 </html>
