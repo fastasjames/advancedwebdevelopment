@@ -67,7 +67,7 @@
   background-color: #04AA6D;
         /*If this webpage is the current one with will glow with a different color*/
       }
-      table,th ,td,tr{
+      table th,td,tr{
     border : 1px solid black;
       border-collapse: collapse;
         /*Establishment of the table with it's borders*/
@@ -76,22 +76,20 @@
         background-color: red;
         /*When the mouse is hovering over a row it will turn a different color*/
       }
-      table,f1{
+      .tbheader{
         background-color: blue;
-        /*Sets background color for the */
+        /*Sets background color for the header of the table*/
       }
     </style>
   </head>
   <body>
-    <h1 id ="home">Razer Mice</h1>
+    <h1 id="home">Razer Mice</h1>
 <p>This table contains razer mice that come highly recommended.</p>
 <!--This form will create the form that contains the table -->   
 <form id="f1">
 <table>
-    <tr>
-    <th>
-     Order?
-      </th>
+    <tr class="tbheader">
+    <th>Order?</th>
     <th>Quantity <br>(Between 1-10)</th>
     <th>Product</th>
     <th>Link</th>
