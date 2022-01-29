@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="default.asp">Home</a></li>
+    </ul>
+    
+    <title>Razer Mice Reference </title>
+    <style>
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: blue;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+        
+      }
+      li a:hover {
+        background-color: #111
+      }
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+        }
+      
+      table,th ,td{
+    border : 1px solid black;
+      border-collapse: collapse;
+                  }
+    </style>
+  </head>
+  <body>
+    <h2>Razer Mice</h2>
+<p>This table contains razer mice that come highly recommended.</p>
+    
+<form id="f1">
+<table>
+    <tr>
+    <th>
+     Order?
+      </th>
+    <th>Quantity <br>(Between 1-10)</th>
+    <th>Product</th>
+    <th>Link</th>
+  </tr>
+  
+   <tr>
+    <td style="text-align:center;">
+     <input type="checkbox"> <br>
+      </td>
+    <th> <input type="number" min="1" max="10"></th>
+    <td> Razer Pro Click Mini
+     </td>
+     <td>
+        <a href="https://www.razer.com/gaming-mice/Razer-Pro-Click-Mini/RZ01-03990100-R3U1">Specs</a> 
+     </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+     <input type="checkbox"> <br>
+      </td>
+    <th> <input type="number" min="1" max="10"></th>
+    <td>Razer DeathAdder V2</td>
+    <td>
+      <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-V2-X-HyperSpeed/RZ01-04130100-R3U1">Specs</a>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+     <input type="checkbox"> <br>
+      </td>
+    <th> <input type="number" min="1" max="10"></th>
+    <td>Razer Basilisk V3</td>
+    <td>
+    <a href = "https://www.razer.com/gaming-mice/Razer-Basilisk-V3/RZ01-04000100-R3M1">Specs</a>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+     <input type="checkbox"> <br>
+      </td>
+    <th> <input type="number" min="1" max="10"></th>
+    <td>Razer DeathAdder</td>
+    <td>
+    <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-Essential/RZ01-03850100-R3M1">Specs</a>
+    </td>
+  </tr>
+</table> 
+  <input type="reset">
+  <input type="submit">
+      </form>   
+  </body>
+</html>
