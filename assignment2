@@ -5,30 +5,34 @@
       
       <li><a class="active" href="#Home">Home</a></li>
       <li><a href="#testing">About</a></li>
+      <!--This is where we set the Navigation Bar items-->
     </ul>
     
     <title>Razer Mice Reference </title>
     <style>
       .info{
-  position: relative;
-}
+        position: relative;
+        /*This sets the invisible box for the info text to reference it's permission from*/
+           }
+      
       .info .infotext {
         visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  right: -100%; 
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: -100%; 
+        /*The info box that appears is defined by these values*/
+        
       }
-
-  /* Position the tooltip */
       .info:hover .infotext{
         visibility: visible;
+        /*Sets the info from invisible to visible when you hover over it*/
       }
       ul {
         list-style-type: none;
@@ -40,9 +44,11 @@
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0;
+        /*This is the Navigation Bar */
         }
       li {
         float: left;
+        /*Sets the initial location for the menu items*/
       }
       li a {
         display: block;
@@ -50,30 +56,35 @@
         text-align: center;
         padding:14px 16px;
         text-decoration: none;
-        
+        /*This is where the deafult values for menu items are set*/
       }
       li a:hover:not(.active) {
         background-color: #111
+        /*This is where the color will change when the mouse is hovered over the items*/
       }
       .active {
   background-color: #04AA6D;
+        /*If this webpage is the current one with will glow with a different color*/
       }
       table,th ,td,tr{
     border : 1px solid black;
       border-collapse: collapse;
+        /*Establishment of the table with it's borders*/
                   }
       .highlightable:hover:not(.active){
         background-color: red;
+        /*When the mouse is hovering over a row it will turn a different color*/
       }
       table,f1{
         background-color: blue;
+        /*Sets background color for the */
       }
     </style>
   </head>
   <body>
-    <h2>Razer Mice</h2>
+    <h1>Razer Mice</h1>
 <p>This table contains razer mice that come highly recommended.</p>
-    
+<!--This form will create the form that contains the table -->   
 <form id="f1">
 <table>
     <tr>
@@ -147,6 +158,7 @@
     </td>
   </tr>
 </table> 
+  <!--These buttons can be optomized when the submission of the values is collected-->
   <input type="reset">
   <input type="submit">
       </form>  
