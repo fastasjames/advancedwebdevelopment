@@ -64,11 +64,11 @@
         /*This is where the color will change when the mouse is hovered over the items*/
       }
       .active {
-  background-color: #04AA6D;
+      background-color: red;
         /*If this webpage is the current one with will glow with a different color*/
       }
       table th,td,tr{
-    border : 1px solid black;
+      border : 1px solid black;
       border-collapse: collapse;
         /*Establishment of the table with it's borders*/
                   }
@@ -79,6 +79,14 @@
       .tbheader{
         background-color: blue;
         /*Sets background color for the header of the table*/
+      }
+      h1,h2,p{
+        font-family: "Times New Roman" ,Times, serif;
+        /*Sets font for the text and paragraph*/
+      }
+      p{
+        font-size:20px
+          /*sets paragraph font size*/
       }
     </style>
   </head>
@@ -168,23 +176,27 @@
     James Conlin
     </h2>
     <p>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-      This is test text<br>
-
-      
+      I am James Conlin and I am a CSC Major<br>
+      I dunno I really don't have anything really<br>
+      Interesting that I do I'm moslty just filling<br>
+      Space so that I can show that the navigation bar<br>
+      Definetly moves down so that I can get graded well<br>
+      On this assignment. I'm kinda running out of things<br>
+      To say. Well I guess we could talk about snow.<br>
+      Snow is something that we are able to ... oh wait hold<br>
+      on I need to go get lunch ......................<br>
+      Ok I'm back. Have I filled up the amount of words<br>
+      I need to share for this? If only I knew........<br>
+      Nope just like I thought I still needed a couple more<br>
+      Lines so that I can hopefully do well on this assignment<br>
+      and make sure that I have enough time to build that<br>
+      java assignment that I need to<br>
+      build for my computer algo class<br>
+      I wonder if I'll ever finish that assignmenr<br>
+      How many times do I have to set the br stuff<br>
+      It continually goes on and on until I guess I am done<br>
+      Shoot I still have to customize that text before I submit<br>
+      This assignment. That might be quite annoying<br>
     </p>
   </body>
 </html>
