@@ -9,6 +9,9 @@
     
     <title>Razer Mice Reference </title>
     <style>
+      .f1{
+        background-color:black;
+      }
       ul {
         list-style-type: none;
         margin: 0;
@@ -37,10 +40,16 @@
       .active {
   background-color: #04AA6D;
       }
-      table,th ,td{
+      table,th ,td,tr{
     border : 1px solid black;
       border-collapse: collapse;
                   }
+      .highlightable:hover:not(.active){
+        background-color: red;
+      }
+      table,f1{
+        background-color: blue;
+      }
     </style>
   </head>
   <body>
@@ -58,7 +67,7 @@
     <th>Link</th>
   </tr>
   
-   <tr>
+   <tr class="highlightable">
     <td style="text-align:center;">
      <input type="checkbox"> <br>
       </td>
@@ -69,17 +78,17 @@
         <a href="https://www.razer.com/gaming-mice/Razer-Pro-Click-Mini/RZ01-03990100-R3U1">Specs</a> 
      </td>
   </tr>
-  <tr>
+  <tr class="highlightable">
     <td style="text-align:center;">
      <input type="checkbox"> <br>
       </td>
-    <th> <input type="number" min="1" max="10"></th>
+    <td> <input type="number" min="1" max="10"></td>
     <td>Razer DeathAdder V2</td>
     <td>
       <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-V2-X-HyperSpeed/RZ01-04130100-R3U1">Specs</a>
     </td>
   </tr>
-  <tr>
+  <tr class="highlightable">
     <td style="text-align:center;">
      <input type="checkbox"> <br>
       </td>
@@ -89,7 +98,7 @@
     <a href = "https://www.razer.com/gaming-mice/Razer-Basilisk-V3/RZ01-04000100-R3M1">Specs</a>
     </td>
   </tr>
-  <tr>
+  <tr class="highlightable">
     <td style="text-align:center;">
      <input type="checkbox"> <br>
       </td>
@@ -104,6 +113,10 @@
   <input type="submit">
       </form>  
     <h1 id="testing">
+      About Me
     </h1>
+    <h2>
+    James Conlin
+    </h2>
   </body>
 </html>
