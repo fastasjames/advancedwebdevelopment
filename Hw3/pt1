@@ -5,9 +5,6 @@
 <title> HW #3, Question 1 </title>
   
 <style>
-  
-  
-  
   .color-inputs{
     display: inline-block;
     padding:5px;
@@ -119,5 +116,3 @@
 </body>
 
 </html>
-
-
