@@ -38,7 +38,7 @@ label {
 <h1> Please register by completing the information below </h1>
 
 <div id = "login">
-	<label id = "lbl" for = "fname"> First name: </label>
+	<label id = "lbl" for = "fname"> First Name: </label>
 	<input id = "fname" type = "text" placeholder = "first name">
 	<button id = "btn" onclick = "continue1();"> Continue </button>
 	<div id = "page">Page 1/2</div>
@@ -49,18 +49,49 @@ label {
 "use script";
 var fName;
 var lName;
-	
+var buttonclickwontplaynice = false;	
 // gets intro div by its id, and changes its innerHTML
 function continue1() {
-
+  let button = document.getElementById("btn")
+  let label = document.getElementById("lbl");
   let fname = document.getElementById("fname");
-  if (fname.value == null){
+  let page = document.getElementById("page");
+  if (buttonclickwontplaynice == true){
+    continue2();
+  }
+  else{
+  if (fname.value == ""){
     alert("Please give your first name");
   }
-  
-	alert("Bad");
+  else {
+    fName=fname.value;
+    fname.value = "";
+    fname.placeholder = "last name";
+    label.innerHTML = "Last Name";
+    page.innerHTML = "Page 2/2";
+    buttonclickwontplaynice = true;
+    
+    }
 	
 }
+}
+  function continue2(){
+    let lname = document.getElementById("fname");
+    if (lname.value == ""){
+    alert("Please give your last name");
+  }
+  else {
+    lName=lname.value
+    let divider = document.getElementById("login");
+    divider.style.display = "none";
+    document.write('<div>');
+    document.write('Thank you for registering '+fName+' '+lName+'.'+'</div>');
+    document.write('<div>'+'Have a great rest of your day!'+'</div>');
+    
+    }
+	
+}
+
 	
 
 </script>
