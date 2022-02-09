@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <a id="top"></a>
+    <ul>
+      <li><a class="active" href="#top">Home</a></li>
+      <li><a href="#testing">About</a></li>
+      <!--This is where we set the Navigation Bar items-->
+    </ul>
+    
+    <title>Razer Mice Reference </title>
+    <!--Title of webpage set-->
+    <style>
+      .info{
+        position: relative;
+        /*This sets the invisible box for the info text to reference it's permission from*/
+           }
+      
+      .info .infotext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: -100%; 
+        /*The info box that appears is defined by these values*/
+        
+      }
+      .info:hover .infotext{
+        visibility: visible;
+        /*Sets the info from invisible to visible when you hover over it*/
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        /*This is the Navigation Bar */
+        }
+      li {
+        float: left;
+        /*Sets the initial location for the menu items*/
+      }
+      li a {
+        display: block;
+        color: blue;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+        /*This is where the deafult values for menu items are set*/
+      }
+      li a:hover:not(.active) {
+        background-color: #111
+        /*This is where the color will change when the mouse is hovered over the items*/
+      }
+      .active {
+      background-color: red;
+        /*If this webpage is the current one with will glow with a different color*/
+      }
+      table th,td,tr{
+      border : 1px solid black;
+      border-collapse: collapse;
+        /*Establishment of the table with it's borders*/
+                  }
+      .highlightable:hover:not(.active){
+        background-color: red;
+        /*When the mouse is hovering over a row it will turn a different color*/
+      }
+      .tbheader{
+        background-color: blue;
+        /*Sets background color for the header of the table*/
+      }
+      h1,h2,p{
+        font-family: "Times New Roman" ,Times, serif;
+        /*Sets font for the text and paragraph*/
+      }
+      p{
+        font-size:20px
+          /*sets paragraph font size*/
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="home">Razer Mice</h1>
+<p>This table contains razer mice that come highly recommended.</p>
+<!--This form will create the form that contains the table -->   
+<form id="f1">
+<table>
+    <tr class="tbheader">
+    <th>Order?</th>
+    <th>Quantity <br>(Between 1-10)</th>
+    <th>Product</th>
+    <th>Link</th>
+  </tr>
+  
+   <tr class="highlightable">
+    <td style="text-align:center;">
+     <input id= "check0" onclick="check(0)" type ="checkbox"> <br>
+      </td>
+    <th> <input id = "num0" type="number" min="1" max="10"></th>
+    <td class="info"> Razer Pro Click Mini
+      <span class ="infotext">    
+    Silent, tactile mouse clicks
+    Sleek and compact design
+    Razer™ HyperScroll technology</span>
+     </td>
+     <td>
+        <a href="https://www.razer.com/gaming-mice/Razer-Pro-Click-Mini/RZ01-03990100-R3U1">Specs</a> 
+     </td>
+  </tr>
+  <tr class="highlightable">
+    <td style="text-align:center;">
+     <input id= "check1" onclick="check(1)" type="checkbox"> <br>
+      </td>
+    <td> <input id = "num1" type="number" min="1" max="10"></td>
+    <td class="info">Razer DeathAdder V2
+      <span class="infotext">
+    Award-winning Ergonomic Design
+    Ultra-fast Razer™ HyperSpeed Wireless
+    235 Hours of Battery Life (2.4GHz)
+      </span>
+    </td>
+    <td>
+      <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-V2-X-HyperSpeed/RZ01-04130100-R3U1">Specs</a>
+    </td>
+  </tr>
+  <tr class="highlightable">
+    <td style="text-align:center;">
+     <input id= "check2" onclick="check(2)" type="checkbox"> <br>
+      </td>
+    <th> <input id = "num2" type="number" min="1" max="10"></th>
+    <td class="info">Razer Basilisk V3
+    <span class="infotext">
+    10+1 Programmable Buttons
+    Razer™ HyperScroll Tilt Wheel
+    11 Razer Chroma™ RGB Lighting Zones</span>
+    </td>
+    <td>
+    <a href = "https://www.razer.com/gaming-mice/Razer-Basilisk-V3/RZ01-04000100-R3M1">Specs</a>
+    </td>
+  </tr>
+  <tr class="highlightable">
+    <td style="text-align:center;">
+     <input id= "check3" onclick="check(3)" type="checkbox"> <br>
+      </td>
+    <th> <input id = "num3" type="number" min="1" max="10"></th>
+    <td class="info">Razer DeathAdder
+    <span class="infotext">
+    Proven History of Performance
+    Ergonomic Form
+    Multi-Award Winning Tech</span>
+    </td>
+    <td>
+    <a href = "https://www.razer.com/gaming-mice/Razer-DeathAdder-Essential/RZ01-03850100-R3M1">Specs</a>
+    </td>
+  </tr>
+  <script>
+      "use strict";
+      function check(i){
+          let checkboxes = document.getElementById("check"+i);
+          let checker = document.getElementById("num"+i);
+          if (checkboxes.checked == true){
+            checker.value = "1";
+          }
+          else{
+              checker.value = "";
+          }
+          //Essentially this checks in to see what checkbox was clicked
+          //Defined by i and then sets the number box to 1 by deafult
+      }
+  </script>
+</table> 
+  <!--These buttons can be optomized when the submission of the values is collected-->
+  <input type="reset">
+  <input type="submit">
+      </form>  
+    <h1 id="testing">
+      About Me
+    </h1>
+    <h2>
+    James Conlin
+    </h2>
+    <p>
+      I am James Conlin and I am a CSC Major<br>
+      I dunno I really don't have anything really<br>
+      Interesting that I do I'm moslty just filling<br>
+      Space so that I can show that the navigation bar<br>
+      Definetly moves down so that I can get graded well<br>
+      On this assignment. I'm kinda running out of things<br>
+      To say. Well I guess we could talk about snow.<br>
+      Snow is something that we are able to ... oh wait hold<br>
+      on I need to go get lunch ......................<br>
+      Ok I'm back. Have I filled up the amount of words<br>
+      I need to share for this? If only I knew........<br>
+      Nope just like I thought I still needed a couple more<br>
+      Lines so that I can hopefully do well on this assignment<br>
+      and make sure that I have enough time to build that<br>
+      java assignment that I need to<br>
+      build for my computer algo class<br>
+      I wonder if I'll ever finish that assignment<br>
+      How many times do I have to set the br stuff<br>
+      It continually goes on and on until I guess I am done<br>
+      Shoot I still have to customize that text before I submit<br>
+      This assignment. That might be quite annoying<br>
+    </p>
+  </body>
+</html>
