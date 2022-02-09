@@ -101,18 +101,29 @@
     <th>Quantity <br>(Between 1-10)</th>
     <th>Product</th>
     <th>Link</th>
+    <!--Pretty standard header also different color because of class 
+    that is listed above-->
   </tr>
   
    <tr class="highlightable">
+       <!--Makes the row highlightable-->
     <td style="text-align:center;">
      <input id= "check0" onclick="check(0);" type ="checkbox"> <br>
+     <!--The check box essentially checks to see is the box checked an if so populate
+    with a value of 1 otherwise if it is no longer checked clear the input-->
       </td>
     <th> <input id = "num0" type="number" min="1" max="10" onblur="blurbox(0);"></th>
+    <!--So I'll explain this here. On blur will take whatever value you are given
+    And when onblur aka you click away it will then go to blurbox with the given number of
+    the id inorder to run the checks that need to be. This makes sure that the checkbox is
+    properly checked or unchecked. I did this with all 4 inputs-->
     <td class="info"> Razer Pro Click Mini
       <span class ="infotext">    
     Silent, tactile mouse clicks
     Sleek and compact design
     Razer™ HyperScroll technology</span>
+    <!--Info text pops up relative to the product hovered over. To change this go to style
+    class infotext and info to change the relative position or colors of the text-->
      </td>
      <td>
         <a href="https://www.razer.com/gaming-mice/Razer-Pro-Click-Mini/RZ01-03990100-R3U1">Specs</a> 
@@ -205,8 +216,18 @@
                 }
             }
             alert(numberofproduct[0]+" "+ productname[0]+"\n"+numberofproduct[1]+" "+ productname[1]+"\n"+numberofproduct[2]+" "+ productname[2]+"\n"+numberofproduct[3]+" "+ productname[3]+"\n");
+            //So the deal here is to collect the numbers of each item 
+            //Collected to and print it out to make sure that the 
+            //Items ordered are the items that are recorded
+            //In the future if I have more time I will optimize this by
+            //Using an array that would have all the values assigned
+            //I might do that tonight hence what might be above
+            //But I also have 2 Essays and 3 other programming
+            //projects including my own pet project so that might
+            //Be pushed back until a later date when I am better 
+            //caught up :)
         }
-        productname[0]
+        
   </script>
 </table> 
   <!--These buttons can be optomized when the submission of the values is collected-->
