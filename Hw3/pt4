@@ -86,7 +86,7 @@
       }
       p{
         font-size:20px
-          /*sets paragraph font size*/
+          /*Sets paragraph font size*/
       }
     </style>
   </head>
@@ -115,7 +115,7 @@
     <th> <input id = "num0" type="number" min="1" max="10" onblur="blurbox(0);"></th>
     <!--So I'll explain this here. On blur will take whatever value you are given
     And when onblur aka you click away it will then go to blurbox with the given number of
-    the id inorder to run the checks that need to be. This makes sure that the checkbox is
+    the id inorder to run the checks that need to be done. This makes sure that the checkbox is
     properly checked or unchecked. I did this with all 4 inputs-->
     <td class="info"> Razer Pro Click Mini
       <span class ="infotext">    
@@ -181,7 +181,7 @@
           let checkboxes = document.getElementById("check"+i);
           let checker = document.getElementById("num"+i);
           if (checkboxes.checked == true){
-            checker.value = "1";
+              checker.value = "1";
           }
           else{
               checker.value = "";
