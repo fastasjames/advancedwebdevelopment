@@ -94,7 +94,7 @@
     <h1 id="home">Razer Mice</h1>
 <p>This table contains razer mice that come highly recommended.</p>
 <!--This form will create the form that contains the table -->   
-<form id="f1">
+<form id="f1" onsubmit="submitTheForm();">
 <table>
     <tr class="tbheader">
     <th>Order?</th>
@@ -105,9 +105,9 @@
   
    <tr class="highlightable">
     <td style="text-align:center;">
-     <input id= "check0" onclick="check(0)" type ="checkbox"> <br>
+     <input id= "check0" onclick="check(0);" type ="checkbox"> <br>
       </td>
-    <th> <input id = "num0" type="number" min="1" max="10"></th>
+    <th> <input id = "num0" type="number" min="1" max="10" onblur="blurbox(0);"></th>
     <td class="info"> Razer Pro Click Mini
       <span class ="infotext">    
     Silent, tactile mouse clicks
@@ -120,9 +120,9 @@
   </tr>
   <tr class="highlightable">
     <td style="text-align:center;">
-     <input id= "check1" onclick="check(1)" type="checkbox"> <br>
+     <input id= "check1" onclick="check(1);" type="checkbox"> <br>
       </td>
-    <td> <input id = "num1" type="number" min="1" max="10"></td>
+    <td> <input id = "num1" type="number" min="1" max="10" onblur="blurbox(1);"></td>
     <td class="info">Razer DeathAdder V2
       <span class="infotext">
     Award-winning Ergonomic Design
@@ -136,9 +136,9 @@
   </tr>
   <tr class="highlightable">
     <td style="text-align:center;">
-     <input id= "check2" onclick="check(2)" type="checkbox"> <br>
+     <input id= "check2" onclick="check(2);" type="checkbox"> <br>
       </td>
-    <th> <input id = "num2" type="number" min="1" max="10"></th>
+    <th> <input id = "num2" type="number" min="1" max="10" onblur="blurbox(2);"></th>
     <td class="info">Razer Basilisk V3
     <span class="infotext">
     10+1 Programmable Buttons
@@ -151,9 +151,9 @@
   </tr>
   <tr class="highlightable">
     <td style="text-align:center;">
-     <input id= "check3" onclick="check(3)" type="checkbox"> <br>
+     <input id= "check3" onclick="check(3);" type="checkbox"> <br>
       </td>
-    <th> <input id = "num3" type="number" min="1" max="10"></th>
+    <th> <input id = "num3" type="number" min="1" max="10" onblur="blurbox(3);"></th>
     <td class="info">Razer DeathAdder
     <span class="infotext">
     Proven History of Performance
@@ -166,7 +166,7 @@
   </tr>
   <script>
       "use strict";
-      function check(i){
+        function check(i){
           let checkboxes = document.getElementById("check"+i);
           let checker = document.getElementById("num"+i);
           if (checkboxes.checked == true){
@@ -177,7 +177,36 @@
           }
           //Essentially this checks in to see what checkbox was clicked
           //Defined by i and then sets the number box to 1 by deafult
-      }
+        }
+        function blurbox(i){
+            let checkboxes = document.getElementById("check"+i);
+            let checker = document.getElementById("num"+i);
+            if (checker.value == "" || checker.value == "0"){
+                checkboxes.checked = false;
+                checker.value = "";
+            }
+            else{
+                checkboxes.checked = true;
+            }
+            //Esentially this checks if the checker has a good value
+            //If it doesn't it deactivates the box or activates depending
+            //on the situation
+            }
+        function submitTheForm(){
+            let productname = ["Razer Pro Click Mini","Razer DeathAdder V2","Razer Basilisk V3","Razer DeathAdder"];
+            var numberofproduct = [0,0,0,0];
+            for(let i=0; i<4;i++){
+                let checker = document.getElementById("num"+i);
+                if (checker.value == ""){
+                    console.log("ok");
+                }
+                else{
+                    numberofproduct[i]=checker.value;
+                }
+            }
+            alert(numberofproduct[0]+" "+ productname[0]+"\n"+numberofproduct[1]+" "+ productname[1]+"\n"+numberofproduct[2]+" "+ productname[2]+"\n"+numberofproduct[3]+" "+ productname[3]+"\n");
+        }
+        productname[0]
   </script>
 </table> 
   <!--These buttons can be optomized when the submission of the values is collected-->

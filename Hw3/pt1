@@ -92,7 +92,7 @@
       font.value = "black";
       }
     function changeFont(){
-      let font = document.getElementById("textcolor")
+      let font = document.getElementById("textcolor");
       const collection = document.getElementsByClassName("p1");
       for (let i=0; collection.length > i ;i++){
       collection[i].style.color = font.value;
