@@ -46,7 +46,7 @@ label {
 
 
 <script>
-"use script";
+"use strict";
 var fName;
 var lName;
 var buttonclickwontplaynice = false;	
