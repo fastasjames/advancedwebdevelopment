@@ -54,6 +54,18 @@
         <button type="button" class="btn btn-danger">Click Me</button>
     </div>
   </div>
+  <div>
+    <p>
+    
+  </p>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+      <button type="button" class="btn btn-danger">Click Me</button>
+  </div>
+</div>
+
+
   
    <!-- add more row here -->
 
