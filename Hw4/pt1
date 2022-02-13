@@ -15,9 +15,19 @@
 
   <script>
     $(document).ready(function(){  
-        alert("Document is ready - add jQuery statements to complete the assignment");
-
-    }); 
+        $("button").click(function(){
+          if ($(this).hasClass("btn btn-danger")){
+            $(this).removeClass("btn btn-danger");
+            $(this).addClass("btn btn-success");
+          }
+          else{
+            $(this).removeClass("btn btn-success");
+            $(this).addClass("btn btn-danger");
+            
+          } 
+          
+  });
+    });
   </script>
 
 </head>
@@ -47,9 +57,9 @@
       <div class="col-sm-4">
           <button type="button" class="btn btn-danger">Click Me</button>
       </div>
-      <div class="col-sm-4">
-          <button type="button" class="btn btn-danger">Click Me</button>
-      </div>
+      <div1 class="col-sm-4 1">
+          <button type="button" class="1 btn btn-danger">Click Me</button>
+      </div1>
       <div class="col-sm-4">
         <button type="button" class="btn btn-danger">Click Me</button>
     </div>
