@@ -1,10 +1,13 @@
 $('a').css('color', 'red');
 
-$("p").mouseover(function(event){ 
+$("*").mouseover(function(event){ 
         event.stopPropagation();
-        $(this).css("background-color", "yellow")
+        $(this).css("background-color", "yellow");
+        
 
     });
 $("*").mouseout(function(event) {
         $(this).css("background-color", "unset")
     });
+
+$("h1").css({'color':'white','background':'black', 'position': 'sticky','top':'0px','z-index': '1000'});
