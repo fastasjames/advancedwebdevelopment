@@ -110,9 +110,9 @@
         <h1> Wordle Project </h1>
         <p> <b>Rules:</b> Guess the five letter word. After submitting a guess, the characters will be color coded as below. </p>
         <ul>
-          <li>The Letter is in The <span class = "keyboard-correct"> CORRECT  Position </span> </li>
-          <li>The Letter is in The <span class = "keyboard-almost"> WRONG Position</span></li>
-          <li id>The Letter is <span class = "keyboard-incorrect">NOT in The Word</span></li>
+          <p>The Letter is in The <span class = "keyboard-correct"> CORRECT  Position </span> </p>
+          <p>The Letter is in The <span class = "keyboard-almost"> WRONG Position</span></p>
+          <p>The Letter is <span class = "keyboard-incorrect">NOT in The Word</span></p>
         </ul>
           <p>Guesses do not need to be real words, but need to be five letters. For more fun, go to <a class = "wordle" href="https://www.powerlanguage.co.uk/wordle/">Wordle</a></p>
 
@@ -171,7 +171,7 @@
             tempor = (checker.value).toUpperCase();
             if (arry[k] == tempor){
               if(i==k){
-             
+                $(checker).removeClass("keyboard-almost");
                 $(checker).removeClass("keyboard-incorrect");
                 $(checker).addClass("keyboard-correct");
                 a = tempor;
@@ -184,14 +184,13 @@
                 break;
               }
               else{
-                alert("Almost");
                 $(checker).removeClass("keyboard-incorrect");
                 $(checker).addClass("keyboard-almost");
                 a = tempor;
                 tbutton = document.getElementById(a);
                 if (($(tbutton).attr('class')) == ("keyboard-correct")){
                   break;
-                  alert("wow");
+                  
                 }
                 else{
                   $(tbutton).removeClass("keyboard-incorrect");
@@ -206,10 +205,14 @@
               tbutton = document.getElementById(tempor);
               if (($(tbutton).attr('class')) == ("keyboard-correct")){
                 $(checker).removeClass("keyboard-incorrect");
+                $(checker).removeClass("keyboard-almost");
                 $(checker).addClass("keyboard-correct");
                 }
+              else if (($(tbutton).attr('class')) == ("keyboard-almost")){
+                $(checker).removeClass("keyboard-incorrect");
+                $(checker).addClass("keyboard-almost");
+              }
               else{
-              $(checker).addClass("keyboard-incorrect");
               $(tbutton).removeClass("keyboard-button");
               $(tbutton).addClass("keyboard-incorrect");
               }
@@ -221,7 +224,6 @@
           if(counter == 5){
             temp = document.getElementById("hidding");
             temp.style.display='block';
-            alert("work");
           }
         }
         function mercyTheForm(){
@@ -252,7 +254,6 @@
           var message = document.getElementById("dark");
           var element = document.body;
           element.classList.toggle("dark-mode");
-          alert(message.innerText);
           if((message.innerText) == "Dark Mode"){
             message.innerText = "Light Mode";
           }
