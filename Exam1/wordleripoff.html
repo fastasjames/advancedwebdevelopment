@@ -22,6 +22,29 @@
           border-radius: 4px;
           border: 2px, solid gray;
         }
+        .keyboard-correct{
+          margin:3px;
+          border-radius: 4px;
+          border: 2px, solid #6aaa64 ;
+          background-color:  #6aaa64;
+        }
+        .keyboard-almost{
+          margin:3px;
+          border-radius: 4px;
+          border: 2px, solid #c9b458 ;
+          background-color:  #c9b458;
+        }
+        .keyboard-incorrect{
+          margin:3px;
+          border-radius: 4px;
+          border: 2px, solid #787c7e ;
+          background-color:  #787c7e;
+        }
+        form, body, input {
+          display: inline-block;
+          text-align: center;
+        }
+
           
       </style>
 
@@ -34,9 +57,17 @@
          
           <h1> Wordle Project </h1>
 
-        <form onsubmit = "return false;">
+          <form onsubmit = "return false;">
+            <input type="text" id="Letter1" name="Letter1" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="Letter2" name="Letter2" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="Letter3" name="Letter3" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="Letter4" name="Letter4" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="Letter5" name="Letter5" maxlength="1" style="text-transform:uppercase">
+                  <br>
+            <input type="button" value="Submit" onclick="submitTheForm();" >
+            <input type ="reset" value = "Reset">
                   
-        </form>
+                  </form>
   
       </div>
   
@@ -44,6 +75,8 @@
       "use script";
           
         const ANSWER = 'FANCY';
+        const arry = [];
+        
        
         // displays "keys" for each character in the keys string
         function writeKeys(keys) {
@@ -58,6 +91,10 @@
     
             document.write('</div>');
         }     
+        function submitTheForm(){
+          alert("work");
+          
+        }
     
   
         document.write('<div class = "container keys m-5">');
@@ -68,15 +105,32 @@
         writeKeys('ZXCVBNM');
   
         document.write('</div>');
+        
+        for (var i = 0; ANSWER.length>i;i++){
+          arry.push(ANSWER.charAt(i))
+          alert(ANSWER.charAt(i))
+          
+          }
+
+        
+        
+        $("button").click(function(){
+          alert($(this).attr('id'));
+          
+          $(this).removeClass("keyboard-button");
+          $(this).addClass("keyboard-correct");
+          
+          });
 
         </script>
         <script>
-    $(document).ready(function(){  
+           $(document).ready(function(){  
         $(".keyboard-button").click(function(){
-          alert($(this).attr('id'));
+          
           });
     });
-  </script>
+      </script>
+       
 
   
     </body>
