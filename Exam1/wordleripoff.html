@@ -78,6 +78,7 @@
         const arry = [];
         
         
+        
        
         // displays "keys" for each character in the keys string
         function writeKeys(keys) {
@@ -93,6 +94,7 @@
             document.write('</div>');
         }     
         function submitTheForm(){
+          var counter = 0;
           for (var i = 0; ANSWER.length>i;i++){
             for(var k = 0; ANSWER.length>k;k++){
               alert("test");
@@ -101,22 +103,29 @@
             if (arry[k] == tempor){
               if(i==k){
                 alert("Yes");
+                $(checker).removeClass("keyboard-incorrect");
                 $(checker).addClass("keyboard-correct");
                 a = tempor;
                 tbutton = document.getElementById(a);
                 $(tbutton).removeClass("keyboard-button");
+                $(tbutton).removeClass("keyboard-almost");
+                $(tbutton).removeClass("keyboard-incorrect");
                 $(tbutton).addClass("keyboard-correct");
+                counter+=1;
                 break;
               }
               else{
                 alert("Almost");
+                $(checker).removeClass("keyboard-incorrect");
                 $(checker).addClass("keyboard-almost");
                 a = tempor;
                 tbutton = document.getElementById(a);
                 if (($(tbutton).attr('class')) == ("keyboard-correct")){
                   break;
+                  alert("wow");
                 }
                 else{
+                  $(tbutton).removeClass("keyboard-incorrect");
                   $(tbutton).removeClass("keyboard-button");
                   $(tbutton).addClass("keyboard-almost");
                 }
@@ -124,9 +133,24 @@
               }
                 
             }
+            else{
+              tbutton = document.getElementById(tempor);
+              if (($(tbutton).attr('class')) == ("keyboard-correct")){
+                $(checker).removeClass("keyboard-incorrect");
+                $(checker).addClass("keyboard-correct");
+                }
+              else{
+              $(checker).addClass("keyboard-incorrect");
+              $(tbutton).removeClass("keyboard-button");
+              $(tbutton).addClass("keyboard-incorrect");
+              }
+            }
             }
           
           
+          }
+          if(counter == 5){
+            alert("Congratulations! You did it!")
           }
         }
     
@@ -134,7 +158,7 @@
           for (var i = 0; ANSWER.length>i;i++){
             let checker = document.getElementById("box"+(i+1));
             $(checker).removeClass();
-            $(checker).value="";
+            checker.value="";
 
           }
 
@@ -155,13 +179,13 @@
         
         
         $("button").click(function(){
-          alert($(this).attr('id'));
+         // alert($(this).attr('id'));
           for (var i = 0; ANSWER.length>i;i++){
             let checker = document.getElementById("box"+(i+1));
             let tempor = checker.value;
             if(tempor == "" ){
               checker.value = $(this).attr('id');
-              alert(checker.value);
+              //alert(checker.value);
               
               break;
             }
