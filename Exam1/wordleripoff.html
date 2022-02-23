@@ -58,11 +58,11 @@
           <h1> Wordle Project </h1>
 
           <form onsubmit = "return false;">
-            <input type="text" id="Letter1" name="Letter1" maxlength="1" style="text-transform:uppercase">
-            <input type="text" id="Letter2" name="Letter2" maxlength="1" style="text-transform:uppercase">
-            <input type="text" id="Letter3" name="Letter3" maxlength="1" style="text-transform:uppercase">
-            <input type="text" id="Letter4" name="Letter4" maxlength="1" style="text-transform:uppercase">
-            <input type="text" id="Letter5" name="Letter5" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="box1" name="Letter1" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="box2" name="Letter2" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="box3" name="Letter3" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="box4" name="Letter4" maxlength="1" style="text-transform:uppercase">
+            <input type="text" id="box5" name="Letter5" maxlength="1" style="text-transform:uppercase">
                   <br>
             <input type="button" value="Submit" onclick="submitTheForm();" >
             <input type ="reset" value = "Reset">
@@ -76,6 +76,7 @@
           
         const ANSWER = 'FANCY';
         const arry = [];
+        
         
        
         // displays "keys" for each character in the keys string
@@ -92,9 +93,26 @@
             document.write('</div>');
         }     
         function submitTheForm(){
-          alert("work");
+          for (var i = 0; ANSWER.length>i;i++){
+            for(var k = 0; ANSWER.length>k;k++){
+              alert("test");
+            let checker = document.getElementById("box"+(i+1));
+            tempor = (checker.value).toUpperCase();
+            if (arry[k] == tempor){
+              if(i==k){
+                alert("Yes");
+                break;
+              }
+              else{
+                alert("Almost");
+              }
+                
+            }
+        }
+          
           
         }
+      }
     
   
         document.write('<div class = "container keys m-5">');
@@ -107,16 +125,14 @@
         document.write('</div>');
         
         for (var i = 0; ANSWER.length>i;i++){
-          arry.push(ANSWER.charAt(i))
-          alert(ANSWER.charAt(i))
-          
+          arry.push(ANSWER.charAt(i));
           }
 
         
         
         $("button").click(function(){
           alert($(this).attr('id'));
-          
+          alert(textBoxes[i].value);
           $(this).removeClass("keyboard-button");
           $(this).addClass("keyboard-correct");
           
