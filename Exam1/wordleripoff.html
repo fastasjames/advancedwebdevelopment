@@ -65,7 +65,7 @@
             <input type="text" id="box5" name="Letter5" maxlength="1" style="text-transform:uppercase">
                   <br>
             <input type="button" value="Submit" onclick="submitTheForm();" >
-            <input type ="reset" value = "Reset">
+            <input type ="button" value = "Reset" onclick="resetTheForm()">
                   
                   </form>
   
@@ -101,20 +101,44 @@
             if (arry[k] == tempor){
               if(i==k){
                 alert("Yes");
+                $(checker).addClass("keyboard-correct");
+                a = tempor;
+                tbutton = document.getElementById(a);
+                $(tbutton).removeClass("keyboard-button");
+                $(tbutton).addClass("keyboard-correct");
                 break;
               }
               else{
                 alert("Almost");
+                $(checker).addClass("keyboard-almost");
+                a = tempor;
+                tbutton = document.getElementById(a);
+                if (($(tbutton).attr('class')) == ("keyboard-correct")){
+                  break;
+                }
+                else{
+                  $(tbutton).removeClass("keyboard-button");
+                  $(tbutton).addClass("keyboard-almost");
+                }
+                
               }
                 
             }
-        }
+            }
           
           
+          }
         }
-      }
     
-  
+        function resetTheForm(){
+          for (var i = 0; ANSWER.length>i;i++){
+            let checker = document.getElementById("box"+(i+1));
+            $(checker).removeClass();
+            $(checker).value="";
+
+          }
+
+        }
         document.write('<div class = "container keys m-5">');
   
   
@@ -132,9 +156,16 @@
         
         $("button").click(function(){
           alert($(this).attr('id'));
-          alert(textBoxes[i].value);
-          $(this).removeClass("keyboard-button");
-          $(this).addClass("keyboard-correct");
+          for (var i = 0; ANSWER.length>i;i++){
+            let checker = document.getElementById("box"+(i+1));
+            let tempor = checker.value;
+            if(tempor == "" ){
+              checker.value = $(this).attr('id');
+              alert(checker.value);
+              
+              break;
+            }
+          }
           
           });
 
