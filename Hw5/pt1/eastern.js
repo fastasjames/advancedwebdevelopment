@@ -28,14 +28,7 @@ if (!document.URL.includes('easternct.edu')) {
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     // style the div
-    div.className = 'headerCTA header-column';
-    div.style.zIndex = '1000';
-    div.style.position = 'fixed';
-    div.style.top = '20%';
-    div.style.left = '0%';
-    div.style.backgroundColor = 'magenta';
-    div.style.padding = '1%';
-    div.style.border = 'solid 1px black';
+    
 
     // append the div to the body so that it is displayed on the page
     document.body.append(div)
