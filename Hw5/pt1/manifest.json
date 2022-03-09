@@ -1,0 +1,29 @@
+{
+    "name": "Chrome Browser Extension Pt 1",
+    "description": "Demonstrates background and content scripts for a Chrome extension",
+    "version": "1.0",
+    "permissions": [
+      "activeTab" 
+    ],
+  
+    // These scripts automatically run when the url matches the specified patterns
+    "content_scripts": [ 
+      {
+          "matches": ["<all_urls>"],
+          "js": ["changeColor.js"]
+      }
+    ],
+  
+    // Background scripts can be used to respond to events, such as clicking the icon 
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_title": "Chrome Browser Extension Pt 1"
+    },
+    "manifest_version": 2
+  }
+  
+  
+  
