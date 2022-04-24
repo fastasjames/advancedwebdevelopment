@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>PokeAPI Example</h2>
+
+<p>
+Clicking the button will make a request to the PokeAPI, which returns data in JSON format. That data is then parsed and displayed on this page. Clicking the button will make a request to the following page: <a href = "https://pokeapi.co/api/v2/pokemon/1/">https://pokeapi.co/api/v2/pokemon/1/</a>.
+</p>
+  <form id = "form1" onsubmit = "saveName();return false">
+    <label for = "first">First Name: </label>
+    <input id = "first" type = "text" required> <br>
+    <br><br>
+    <input type = "submit" value = "Submit"> 
+    <input id = "btnReset" type = "reset">
+
+</form>
+    <p>
+    <button id = "clicker" type="button" onclick="getInfo()">Get Info from PokeAPI</button>
+    <br><br>
+    <div id="info"></div>
+</p>
+
+
+<script>
+
+var record;
+$(document).ready(function(){
+  recordStr = this.responseText; // JSON format
+            localStorage.getItem('pokemon storage', recordStr);
+
+            record = JSON.parse(recordStr);
+            msg = "Name: " + record.name + '<br><img src="'+ record.sprites.front_default+'" alt="alternatetext"> ';
+            msg+= "<br>"+"Height: " + record.height/10+" Meters: <br>"+"Weight: "+record.weight/10+" Kilograms: "+"<br>Abilities: ";
+            // for each ability, add its name to the string
+            for (var i = 0; i < record.abilities.length; i++) {
+                msg += record.abilities[i].ability.name;
+                if (i + 1 != record.abilities.length) {
+                    msg += ", ";
+                }
+            }
+            msg+= "<br>"+"Type:"
+            for (var i = 0; i < record.types.length; i++) {
+                msg += record.types[i].type.name;
+                if (i + 1 != record.types.length) {
+                    msg += ", ";
+                }
+            }
+ });
+function getInfo() {
+    
+    var xhttp = new XMLHttpRequest();
+    
+    // since Javascript is asynchronous, we respond to a state change event for the request by 
+    // defining a function and assigning it to 'xhttp.onreadystatechange'.
+    xhttp.onreadystatechange = function() {
+      
+        // if request is successful
+        if (this.readyState == 4 && this.status == 200) {
+            
+            recordStr = this.responseText; // JSON format
+            localStorage.setItem('pokemon storage', recordStr);
+
+            record = JSON.parse(recordStr);
+            msg = "Name: " + record.name + '<br><img src="'+ record.sprites.front_default+'" alt="alternatetext"> ';
+            msg+= "<br>"+"Height: " + record.height/10+" Meters: <br>"+"Weight: "+record.weight/10+" Kilograms: "+"<br>Abilities: ";
+            // for each ability, add its name to the string
+            for (var i = 0; i < record.abilities.length; i++) {
+                msg += record.abilities[i].ability.name;
+                if (i + 1 != record.abilities.length) {
+                    msg += ", ";
+                }
+            }
+            msg+= "<br>"+"Type:"
+            for (var i = 0; i < record.types.length; i++) {
+                msg += record.types[i].type.name;
+                if (i + 1 != record.types.length) {
+                    msg += ", ";
+                }
+            }
+            
+           
+        
+            // set the innerHTML of the "info" div
+            document.getElementById("info").innerHTML = msg;
+        }
+        if (this.status == 404 || this.status == 0){
+          msg = "Invalid Input";
+        }
+    
+    }
+    var pikaset =  localStorage.getItem("pokemon")
+    var pikaparse = JSON.parse(pikaset)
+    // submit a 'get' request to the pokeapi; 'true' is used to make the request asynchronously
+    var openpika = "https://pokeapi.co/api/v2/pokemon/"+pikaparse.first;
+
+    xhttp.open("GET", openpika, true);
+    xhttp.send();
+    document.getElementById('clicker').click();
+}
+function saveName() {
+    
+    var firstName = document.getElementById("first").value.trim();
+    if (firstName == ""){
+        return;
+    }
+  
+    // create person object
+    var poke = {first: firstName};
+    
+    // convert person to JSON string and store in local storage 
+    var pokemonStr = JSON.stringify(poke);
+    localStorage.setItem("pokemon", pokemonStr);
+    getInfo();
+    
+    document.getElementById("first").value = firstName;  
+    return true;
+    
+    
+
+}
+
+function readFromLocalStorage() {
+    //Retrieving data:
+    var storedNameString = localStorage.getItem("name");
+
+    if (storedNameString) {
+        var storedName = JSON.parse(storedNameString);
+
+        msg = 'Welcome ' + storedName.first + ' ' + storedName.last;
+        msg += '<br><a href = "#" onclick = "signOut();">Sign out</a>';
+
+    } else {
+        msg = 'Welcome guest';
+    }
+    
+    document.getElementById("name").innerHTML = msg;
+}
+</script>
+
+</body>
+</html>
+
